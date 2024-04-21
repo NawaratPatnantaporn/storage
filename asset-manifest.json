@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/storage/static/css/main.919b299e.css",
+    "main.js": "/storage/static/js/main.74aa4d04.js",
+    "static/media/product2.png": "/storage/static/media/product2.d3907bf62b94d6979669.png",
+    "static/media/product9.png": "/storage/static/media/product9.49e32f7c95e7492e8d98.png",
+    "static/media/meow3.jpg": "/storage/static/media/meow3.bf9219d025222160ef0a.jpg",
+    "static/media/imagebg.jpg": "/storage/static/media/imagebg.3dd094c8a18e0f9cf77e.jpg",
+    "static/media/product6.jpg": "/storage/static/media/product6.82939dd975e3b5ef8669.jpg",
+    "static/media/product10.jpg": "/storage/static/media/product10.0608f21dada44abfda23.jpg",
+    "static/media/meow.jpg": "/storage/static/media/meow.db75241ab38746ca2afe.jpg",
+    "static/media/product4.jpg": "/storage/static/media/product4.4d4f73532060c1ed1af7.jpg",
+    "static/media/product3.jpg": "/storage/static/media/product3.759d6096437418fb2252.jpg",
+    "static/media/product5.png": "/storage/static/media/product5.ca45fcbb56f85ca71874.png",
+    "static/media/logo.png": "/storage/static/media/logo.79a6f227b1dc6c47a126.png",
+    "static/media/product8.jpg": "/storage/static/media/product8.9b5cff493c28dbb0c5e4.jpg",
+    "index.html": "/storage/index.html",
+    "main.919b299e.css.map": "/storage/static/css/main.919b299e.css.map",
+    "main.74aa4d04.js.map": "/storage/static/js/main.74aa4d04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.919b299e.css",
+    "static/js/main.74aa4d04.js"
+  ]
+}
