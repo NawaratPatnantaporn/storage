@@ -2,23 +2,29 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../data/logo.png';
 import { useStateContext } from '../contexts/ContextProvider';
+import axios from 'axios';
 
 const Login = () => {
   const { setActiveMenu } = useStateContext();
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const signin = () => {
-    if (email.trim() === '' || password.trim() === '') {
+    if (name.trim() === '' || password.trim() === '') {
       alert('กรุณากรอกข้อมูล');
-    } else if (email === 'member' && password === '0000') {
-      sessionStorage.setItem('stdNo', '65072713');
-      localStorage.setItem('stdName', 'Nawarat Patnantaporn');
-      navigate('/dashboard');
-      window.location.reload();
     } else {
-      alert('กรุณากรอกข้อมูลให้ถูกต้อง');
+      const VALUES = { name, password };
+      axios.post('http://localhost:3001/login', VALUES)
+        .then(res => {
+          if(res.data === "Success") {
+            navigate('/dashboard');
+            window.location.reload();
+          } else {
+            alert("ข้อมูลไม่ถูกต้อง");
+          }
+        })
+        .catch(err => console.log(err))
     }
     setActiveMenu(true);
   };
@@ -44,23 +50,29 @@ const Login = () => {
             <div>
               <label className="text-lg font-medium">Username</label>
               <input 
+                type='text'
                 className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
                 placeholder='Enter your username'
-                onChange={(e) => setEmail(e.target.value)}
+                name='name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
             <div>
               <label className="text-lg font-medium">Password</label>
-              <input type='password'
+              <input 
+                type='password'
                 className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
                 placeholder='Enter your password'
+                value={password}
+                name='password'
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
             <div className="mt-8 flex flex-col gap-y-4">
-              <button className="active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-blue-500 text-white text-lg font-bold" onClick={signin}>Sign In</button>
+              <button type='button' className="active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-blue-500 text-white text-lg font-bold" onClick={signin}>Sign In</button>
             </div>
 
             <div className="mt-8 flex justify-center items-center">
